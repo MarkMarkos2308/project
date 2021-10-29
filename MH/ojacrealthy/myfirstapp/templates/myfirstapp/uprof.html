@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Profile</title>
+</head>
+<body>
+        <div class="header"><a href="#"><img src="\static\a.png" alt="" class="logo-png"> </a><h1 class="h1">PROFILE  {{user}}  IN  OJAX  REALTHY</h1></div>
+        <div class="menu"><div class="menu1"><a href="#"><h2 class="menu2">menu</h2></a></div></div>
+        {% if user.is_authenticated %}
+        <div class="bod">
+            <div class="bod1">
+                <div class="bod2">
+                    <div class="username"><h3>your username: {{user.username}}</h3></div>
+                    <div class="email"><h3>your email: {{user.email}}</h3></div>
+                    <div class="password reset"><h3>password: *********      <a href="#">password reset</a></h3></div>
+                    <div class="message for company"><h3>You can send <a href="#">message for company</a></h3></div>
+                    <div class="new-post"><h3><a href="#">new post</a></h3></div>
+                </div>
+            </div>
+        </div>
+        <div class="p"><div class="posts"><h2 class="h2p"><a href="#">your posts</a></h2></div></div>
+        <div class="posts1"></div>
+        {% else %}
+            <div class="else"><a href="">REGISTRATION</a></div>
+        {% endif %}
+        <style>
+            .header {
+                background-color: #9B59B6;
+                margin-top: 0;
+                margin-bottom: 40px;
+                padding: 20px 100d0px 20px 40px;
+            }
+            .logo-png {
+                width: 40px;
+                float: left;
+            }
+            body {
+                color: #ffffff;
+                background-color: #BB8FCE;
+            }
+            .menu {
+                padding-left: 270px;
+
+            }
+            .menu1 {
+                border-radius: 25px;
+                background-color: #9B59B6;
+                width: 70px;
+            }
+            .menu2 {
+                padding-left: 6px;
+            }
+            .bod {
+                padding-left: 350px;
+            }
+            .bod1 {
+                background-color: #9B59B6;
+                width: 350px;
+                border-radius: 25px;
+            }
+            .bod2 {
+                padding-left: 13px;
+            }
+            body a {
+                color: #5C1964
+            }
+            .p {
+                padding-left: 270px;
+            }
+            .posts {
+                background-color: #9B59B6;
+                width: 350px;
+                border-radius: 25px;
+                width: 120px;
+            }
+            .h2p {
+                padding-left: 7px;
+            }
+        </style>
+</body>
+</html>

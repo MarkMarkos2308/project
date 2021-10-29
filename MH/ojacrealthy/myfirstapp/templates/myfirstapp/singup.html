@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up!</title>
+</head>
+<body>
+    <div class="header"><a href="#"><img src="\static\a.png" alt=""> </a><h1 class="h1">REGISTER  TO  OJAX  REALTHY</h1></div>
+    <div class='col-md-8'>
+        {% if messages %}
+        {% endif %}
+    </div>
+
+    <div class="content-section">
+        <div class="bod2">
+            <div class="bod3">
+                <form method="POST">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Register Now!</legend>
+                        {{ form.as_p }}
+                    </fieldset>
+                    <div class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Sign Up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="border-top pt-3">
+       <h4 class="text-muted">
+           Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+       </h4>
+    </div>
+    <style>
+        .header {
+            background-color: #9B59B6;
+            margin-top: 0;
+            margin-bottom: 50px;
+        }
+        .bod2 {
+            border-radius: 25px;
+            width: 400px
+            padding: -1px 100px 20px 40px;
+            background-color: #9B59B6;
+        }
+        .bod3 {
+             background-color: #9B59B6;
+             border-radius: 25px;
+        }
+        .content-section {
+            width: 350px;
+            padding-left: 600px;
+        }
+        .text-muted {
+            padding-left: 605px;
+        }
+        .form-group {
+            background-color: #9B59B6;
+        }
+        body {
+            background-color: #BB8FCE;
+            color: #ffffff;
+        }
+        .header a img{
+            width: 40px;
+            float: left;
+        }
+    </style>
+</body>
+</html>
