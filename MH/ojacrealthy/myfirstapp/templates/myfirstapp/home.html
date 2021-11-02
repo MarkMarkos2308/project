@@ -18,7 +18,7 @@
             <nav class="home-nav">
                 {% if user.is_authenticated %}
                     <a href="#"><img src="static\menu1.png" alt="" class="menu1"><small>menu</small></a>   |
-                    <a href="#" class="post-link"><small>new Post</small></a>     |
+                    <a href="{% url 'PostCreate' %}" class="post-link"><small>new Post</small></a>     |
                     <small class="srch">Search</small>  <input type="search" name="Search" class="inp"> <button class="inp">Search</button>
                     <a href="https://instagram.com/ojakh.realty?utm_medium=copy_link"><img src="static\inst.png" alt="" class="inst"></a>
                 {% else %}
