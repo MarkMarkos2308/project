@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ojax Realthy (home)</title>
+</head>
+<body>
+    <div class="header">
+        {% if user.is_authenticated %}
+            <a href="#"><img src="static/css/a.png" alt="" class="log"><small>Ojax Realthy</small></a>
+            <a href="{% url 'profile' %}" class="melog"><img src="static/css/melog.png" class="melog1" alt=""><small>Me</small></a>
+            <a href="{% url 'login' %}" class="exit"><small>|  Exit  |</small></a>
+        {% else %}
+            <a href="#"><img src="static/css/a.png" alt="" class="log"><small>Ojax Realthy</small></a>
+        {% endif %}
+        <div class="navig">
+            <nav class="home-nav">
+                {% if user.is_authenticated %}
+                    <a href="#"><img src="static/css/menu1.png" alt="" class="menu1"><small>menu</small></a>   |
+                    <a href="{% url 'PostCreate' %}" class="post-link"><small>new Post</small></a>     |
+                    <small class="srch">Search</small>  <input type="search" name="Search" class="inp"> <button class="inp">Search</button>
+                    <a href="https://instagram.com/ojakh.realty?utm_medium=copy_link"><img src="static/css/inst.png" alt="" class="inst"></a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="sing"><small>sing in</small></a>   |
+                    <a href="{% url 'singup' %}" class="singup"><small>sing up</small></a>    |
+                    <a href="#"><img src="static/css/menu1.png" alt="" class="menu1"><small>menu</small></a>   |
+                    <small class="srch">Search</small>  <input type="search" name="Search" class="inp"> <button class="inp">Search</button>    |
+                    <a href="https://instagram.com/ojakh.realty?utm_medium=copy_link"><img src="static/css/inst.png" alt="" class="inst"></a>
+                {% endif %}
+            </nav>
+        </div>
+    </div>
+    <div class="bod">
+<!---->
+    </div>
+    <div class="left-div">
+<!---->
+    </div>
+    <div class = "footer">
+        <h1>asd</h1>
+    </div>
+    <style>
+        .footer{
+            margin-top: 10px;
+            background-color: rebeccapurple;
+        }
+        .header {
+            background-color: #9B59B6;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding: 20px 20px 20px 40px;
+        }
+        .log, .melog1, .menu1{
+            width: 30px;
+        }
+        .menu1{
+            width: 40px;
+        }
+        .header a small {
+            color: #ffffff;
+        }
+        .header small {
+            color: #ffffff;
+        }
+        .navig {
+            padding-left: 400px;
+        }
+        .menu1 {
+            padding-left: 15px;
+        }
+        .post-link {
+            padding-left: 18px;
+        }
+        .navig {
+            background-color: #884EA0
+        }
+        .srch {
+            padding-left: 20px
+        }
+        .melog {
+            float: right;
+        }
+        .bod {
+            background-color: #BB8FCE;
+            margin-top: 0;
+            margin-bottom: 40px;
+            padding: 500px 20px 20px 40px;
+            width: 1300px;
+            float: left;
+        }
+        .inst {
+            float: right;
+            width: 25px;
+        }
+        .left-div {
+            background-color: #BB8FCE;
+            width: 15%;
+            float: right;
+        }
+        .exit {
+            padding-left: 1300px;
+        }
+        .inp {
+            border-radius: 25px;
+            background-color: #AF7AC5;
+            color: #ffffff;
+        }
+    </style>
+</body>
+</html>
