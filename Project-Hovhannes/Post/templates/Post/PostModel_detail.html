@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post_Details</title>
+</head>
+<body>
+    <div>
+        <h3>{{ Detail.Title }}</h3>
+        <img src = "{{ Detail.image.url }}">
+        <h1>{{ Detail.user }}</h1>
+        <h5>{{ Detail.telephone }}</h5>
+        <h5>{{ Detail.Type }}</h5>
+        <h5>{{ Detail.Description }}</h5>
+        <h5>{{ Detail.Area }}</h5>
+        <h5>{{ Detail.Rooms }}</h5>
+        <h5>{{ Detail.Address }}</h5>
+    </div>
+    <div>
+        <a href = "{% url 'all-posts' %}">Go Back!!!</a>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
