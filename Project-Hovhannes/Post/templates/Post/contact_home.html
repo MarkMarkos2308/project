@@ -8,7 +8,12 @@
     <div class="header">
         {% if user.is_authenticated %}
             <a href="#"><img src="static/css/a.png" alt="" class="log"><small>Ojax Realthy</small></a>
-            <a href="{% url 'profile' %}" class="melog"><img src="static/css/melog.png" class="melog1" alt=""><small>Me</small></a>
+            <a href="{% url 'profile' %}" class="melog">
+                <div class="profile">
+                    <img src="{{ user.images.url }}" class="melog1" alt="">
+                    <small>{{user.username}}</small>
+                </div>
+            </a>
             <a href="{% url 'login' %}" class="exit"><small>|  Exit  |</small></a>
         {% else %}
             <a href="#"><img src="static/css/a.png" alt="" class="log"><small>Ojax Realthy</small></a>
@@ -31,17 +36,24 @@
         </div>
     </div>
     <div class="bod">
-<!---->
-    </div>
-    <div class="left-div">
-<!---->
-    </div>
-    <div class = "footer">
-        <h1>asd</h1>
+        {% for post in posts %}
+            <a href = "{% url 'details' post.id %}">
+                <div>
+                    <h3>{{ post.Title }}</h3>
+                    <img src = "{{ post.image.url }}" width=200px height=200px>
+                    <h1>{{ post.user }}</h1>
+                    <h5>{{ post.telephone }}</h5>
+                    <h5>{{ post.Type }}</h5>
+                    <h5>{{ post.Description }}</h5>
+                    <h5>{{ post.Area }}</h5>
+                    <h5>{{ post.Rooms }}</h5>
+                    <h5>{{ post.Address }}</h5>
+                </div>
+            </a>
+        {% endfor %}
     </div>
     <style>
         .footer{
-            margin-top: 10px;
             background-color: rebeccapurple;
         }
         .header {
